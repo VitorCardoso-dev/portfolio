@@ -54,7 +54,6 @@ padding: 0 24px;
   border-bottom: 1px solid var(--border);
 }
 .nav-container {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
   height: 80px;
@@ -97,11 +96,12 @@ font-size: .9rem;
  font-size: .9rem;
  font-weight: 500;
  transition: color .2s;
- border-radius: 8px; }
+}
 
 
 .nav-links a:hover {
- color: var(--orange); }
+ color: var(--orange); 
+ }
 
 
 .btn-nav {
@@ -196,7 +196,7 @@ font-size: .9rem;
     border-radius: 50%; animation: pulse 2s infinite; 
 }
 @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.8)} }
-.hero-text h1 { font-family: 'Space Grotesk', sans-serif; font-size:6em; font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+.hero-text h1 { font-family: 'Space Grotesk', sans-serif; font-size:5.5em; font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
 .hero-text p { color: var(--muted); font-size: 1.1rem; max-width: 500px; margin-bottom: 40px; }
 .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
 .btn-primary { padding: 16px 32px; background: var(--orange); color: #000; font-weight: 600; text-decoration: none; border-radius: var(--radius); transition: all .3s; }
