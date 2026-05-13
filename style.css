@@ -869,6 +869,9 @@ body {
     flex-direction: column;
     text-align: center;
   }
+  .footer-links{
+    text-align: center;
+  }
   .hero-text h1 {
     font-size: 3.5em;
   }
