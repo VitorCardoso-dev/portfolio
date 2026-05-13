@@ -1,11 +1,10 @@
-
-    // ── Navbar scroll ──
+// —— Navbar scroll ——
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// ── Hamburger menu ──
+// —— Hamburger menu ——
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');
 
@@ -14,7 +13,6 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
 
-// Fecha ao clicar em um link
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('open');
@@ -22,16 +20,7 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
-// ── Skill bars animadas ao aparecer na tela ──
-const fills = document.querySelectorAll('.fill');
-const skillObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('animated');
-  });
-}, { threshold: 0.3 });
-fills.forEach(f => skillObserver.observe(f));
-
-// ── Fade-in ao rolar ──
+// —— Fade-in ao rolar (Efeito visual nos cards) ——
 const fadeEls = document.querySelectorAll('.skill-card, .project-card, .stat-card, .contact-item');
 const fadeObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -41,6 +30,7 @@ const fadeObserver = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.15 });
+
 fadeEls.forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(30px)';
@@ -48,7 +38,7 @@ fadeEls.forEach(el => {
   fadeObserver.observe(el);
 });
 
-// ── Formulário de contato ──
+// —— Formulário de contato ——
 document.getElementById('contactForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const btn = e.target.querySelector('.btn-submit');
