@@ -37,7 +37,7 @@ strong { color: var(--white); }
 
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--cyan-dim); border-radius: 99px; }
+::-webkit-scrollbar-thumb { display: none; }
 
 /* ==================== HEADER ==================== */
 header {
@@ -71,8 +71,29 @@ header h1 span {
 
 header img { display: none; }
 
-nav { display: flex; align-items: center; gap: 4px; }
-
+nav { 
+    display: flex; 
+    align-items: center; 
+    gap: 4px; 
+    position: fixed;
+    top: 0;
+    right: -100%; 
+    width: 80%; /* Ou 70% como você preferir */
+    height: 100vh;
+    background: var(--card);
+    z-index: 999;
+    
+    /* ADICIONE ESTAS DUAS LINHAS: */
+    visibility: hidden; 
+    pointer-events: none; /* Impede cliques acidentais no menu invisível */
+    
+    transition: all var(--transition);
+}
+ nav.active {
+    right: 0;
+    visibility: visible;
+    pointer-events: auto;
+}
 nav a {
     font-size: 14px;
     font-weight:bolder;
@@ -1059,23 +1080,27 @@ footer p {
     nav {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: -110%; /* Aumentamos para garantir que suma mesmo */
         width: 80%;
         height: 100vh;
-        background: var(--bg2);
-        border-left: 1px solid var(--border);
+        
+        /* A MÁGICA ESTÁ AQUI: */
+        display: none; /* Ele deixa de existir para o layout quando fechado */
+        
+        transition: right var(--transition);
+        z-index: 999;
+    }
+    nav a , .compre{
+        font-size: 17px;
+    }
+    /* Quando abrir, ele passa a existir e desliza */
+    nav.active {
+        display: flex; /* Volta a existir */
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        gap: 25px;
-        transition: var(--transition);
-        z-index: 999;
-        padding: 40px;
-    }
-
-    nav.active {
         right: 0;
     }
+}
 
     .compre {
         margin-left: 0;
@@ -1123,7 +1148,7 @@ footer p {
         margin-left: 0 !important; 
         max-width: 100%;
     }
-}
+
 
 /* Telas muito pequenas (iPhone SE, etc) */
 @media (max-width: 480px) {
