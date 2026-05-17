@@ -685,6 +685,10 @@ footer > a > img:hover {
         margin: 20px;
         text-align: center;
     }
+    div.cafe-especial > button {
+    align-self: center;
+    margin-top: 14px;
+}
 
     /* MENU E CLIENTES */
     #menu,
