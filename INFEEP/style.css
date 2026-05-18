@@ -344,7 +344,7 @@ text-decoration: underline;
     font-size: 1.05rem;
     color: var(--muted);
     line-height: 1.8;
-    margin-bottom: 32px;
+    margin: auto;
     max-width: 480px;
 }
 
@@ -615,11 +615,25 @@ text-decoration: underline;
 
 /* ==================== CURSOS ==================== */
 .cursos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
     padding: 96px 64px;
     background: var(--bg);
+}
+.cursos>h1 {
+    width: 100%;
+    font-family: var(--font-head);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 56px;
+    color: var(--white);
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+.cursos>h1>span{
+    color: var(--cyan);
+    text-shadow: 0 0 30px var(--cyan-glow);
 }
 
 .cursos .curso {
@@ -633,6 +647,7 @@ text-decoration: underline;
     transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
     color: inherit;
     box-shadow: none;
+    width: 500px;
 }
 
 .cursos .curso:hover {
@@ -1047,6 +1062,10 @@ footer p {
         grid-template-columns: 1fr; /* Empilha as colunas */
         text-align: center;
     }
+    .depoimentos-grid {
+    display: flex;
+    flex-direction: column;
+}
 
     .banner-text-content, 
     .texto-marketing {
@@ -1124,10 +1143,7 @@ footer p {
     }
 
     /* Forçar 1 coluna em tudo */
-    .cursos, 
-    .depoimentos-grid {
-        grid-template-columns: 1fr;
-    }
+    
 
     .sobre-inner {
         padding-left: 15px;
@@ -1152,6 +1168,11 @@ footer p {
 
 /* Telas muito pequenas (iPhone SE, etc) */
 @media (max-width: 480px) {
+    .cursos, 
+    .depoimentos-grid {
+        display: flex;
+        flex-direction: column;
+    }
     header h1 {
         font-size: 18px;
     }
