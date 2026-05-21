@@ -36,7 +36,7 @@
         .meta-estudo {
             text-align: center;
             font-size: 14px;
-            color: #777;
+            color: #393939;
             margin-bottom: 20px;
             background: #f1f5f9;
             padding: 10px;
@@ -82,8 +82,23 @@
 
         .form-row input[type="text"] { flex: 2; min-width: 150px; }
         .form-row input[type="number"] { flex: 1; min-width: 80px; }
-        
-        
+        /* RESPONSIVIDADE PARA O FORMULÁRIO */
+        @media (max-width: 600px) {
+            .form-row {
+                flex-direction: column;
+                align-items: stretch; /* Faz os campos ocuparem toda a largura */
+                gap: 12px;            /* Aumenta o respiro entre os campos no celular */
+            }
+
+            .form-row input[type="text"], 
+            .form-row input[type="number"], 
+            .form-row select,
+            .form-row button {
+                width: 100%;    /* Garante que nenhum campo fique "esmagado" */
+                flex: none;     /* Desativa o crescimento proporcional do desktop */
+                padding: 10px;  /* Melhora a área de toque */
+            }
+        }
         /* ORGANIZAÇÃO DOS CARDS LADO A LADO */
         .colunas-habitos {
             display: grid;
@@ -92,7 +107,9 @@
             margin-bottom: 25px;
         }
 
-       
+        @media (max-width: 600px) {
+            .colunas-habitos { grid-template-columns: 1fr; }
+        }
 
         .coluna-boa,.coluna-mal,.coluna-recompensas{
             border: 1px solid #eee;
@@ -100,15 +117,15 @@
             border-radius: 6px;
         }
         .coluna-boa{
-            background:#ceffce38;
+            background:#22ad2238;
             border-left: 3px solid #20d720;
         }
         .coluna-mal{
-            background:#e6a4a41f;
+            background:#ff00003b;
             border-left: 3px solid #ef4444;
         }
         .coluna-recompensas{
-            background-color: #b3d7e83b;;
+            background:#a6ccddad;;
             border-left: 3px solid #3b82f6;
         }
         .coluna h3 {
@@ -127,8 +144,9 @@
             justify-content: space-between;
             align-items: center;
             padding: 8px 0;
+            color: black;
             border-bottom: 1px solid #f5f5f5;
-            font-size: 14px;
+            font-size: 15px;
         }
 
         .botoes-acoes {
@@ -173,6 +191,7 @@
         color: #64748b;
         border: 1px solid #cbd5e1;
         padding: 10px;
+        transition: 0.3s;
     }
     .btn-reset:hover { background: #ef4444; color: white; border-color: #ef4444; }
 
@@ -210,24 +229,6 @@
             font-size: 22px;
             font-weight: bold;
             margin-top: 5px;
-        }
-        /* RESPONSIVIDADE PARA O FORMULÁRIO */
-        @media (max-width: 600px) {
-            .form-row {
-                flex-direction: column;
-                align-items: stretch; /* Faz os campos ocuparem toda a largura */
-                gap: 12px;            /* Aumenta o respiro entre os campos no celular */
-            }
-
-            .form-row input[type="text"], 
-            .form-row input[type="number"], 
-            .form-row select,
-            .form-row button {
-                width: 100%;    /* Garante que nenhum campo fique "esmagado" */
-                flex: none;     /* Desativa o crescimento proporcional do desktop */
-                padding: 10px;  /* Melhora a área de toque */
-            }
-            
         }
     </style>
 </head>
