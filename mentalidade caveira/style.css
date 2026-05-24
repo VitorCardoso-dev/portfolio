@@ -581,7 +581,7 @@ footer {
         margin-top: 15px;
     }
 
-    /* ALTERADO: Modificado para position: fixed para acompanhar o scroll da tela */
+    /* ALTERADO: Mudado para fixed e adicionado z-index alto para ficar sempre visível na rolagem */
     .menu-toggle {
         display: flex;
         flex-direction: column;
@@ -589,10 +589,10 @@ footer {
         width: 30px;
         height: 22px;
         cursor: pointer;
-        position: fixed; /* Correção aqui: fixed ao invés de absolute */
+        position: fixed; 
         top: 35px;
         right: 5%;
-        z-index: 1100;
+        z-index: 9999;
     }
 
     .menu-toggle span {
@@ -604,6 +604,7 @@ footer {
         transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
     }
 
+    /* AJUSTADO: z-index alterado para ficar logo abaixo do botão fixed */
     nav { 
         position: fixed;
         top: 0;
@@ -617,7 +618,7 @@ footer {
         align-items: center;
         gap: 30px;
         transition: right 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
-        z-index: 1000;
+        z-index: 9998;
         padding: 40px;
         box-shadow: -10px 0 30px rgba(0,0,0,0.8);
     }
