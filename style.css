@@ -1,6 +1,4 @@
-
-
-
+@charset "utf-8";
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
@@ -783,9 +781,10 @@ body {
 }
 
 .footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
 }
 
 .footer-links a {
