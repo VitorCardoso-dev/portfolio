@@ -151,49 +151,6 @@
         &copy; 2026 - Feito por Vitor da Silva <br> 
         <p class="caveira">Faca na Caveira | Missão Dada é Missão Cumprida</p>
     </footer>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    // === ADICIONADO: FECHAR MENU AO CLICAR EM UM LINK ===
-    const linksMenu = document.querySelectorAll('nav a');
-    const checkboxMenu = document.getElementById('menu-check');
-
-    linksMenu.forEach(link => {
-        link.addEventListener('click', () => {
-            checkboxMenu.checked = false; // Fecha o menu tirando o 'check'
-        });
-    });
-
-    // === SEU SCRIPT DE ANIMAÇÃO EXISTENTE ===
-    const fadeEls = document.querySelectorAll('.sobre, .card-funcao, .beneficios-item, .video-container-premium, .texto-introducao');
-    
-    fadeEls.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(50px)';
-        el.style.transition = 'opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)';
-    });
-
-    const fadeObserver = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                const target = e.target;
-                
-                target.style.opacity = '1';
-                target.style.transform = 'translateY(0)';
-                
-                setTimeout(() => {
-                    target.style.transform = '';
-                    target.style.transition = '';
-                    target.style.opacity = '1'; 
-                }, 800);
-
-                fadeObserver.unobserve(target);
-            }
-        });
-    }, { threshold: 0.10 });
-
-    fadeEls.forEach(el => fadeObserver.observe(el));
-});
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
