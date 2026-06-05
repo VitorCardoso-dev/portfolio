@@ -911,3 +911,11 @@ footer p {
 footer p:hover {
   opacity: 1; /* Dá um leve destaque ao passar o mouse */
 }
+@media (max-width:768px){
+  .logo span{
+    font-size: 1.3em;
+  }
+  h1{
+    font-size: 1.5em;
+  }
+}
