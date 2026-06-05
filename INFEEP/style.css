@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -20,8 +19,6 @@
     --radius:    14px;
     --transition: 0.35s cubic-bezier(.4,0,.2,1);
 }
-
-
 
 body {
     font-family: var(--font-sans);
@@ -50,7 +47,6 @@ header {
     align-items: center;
     background: rgba(7,11,18,0.80);
     backdrop-filter: blur(20px);
-    
     border-bottom: 1px solid var(--border);
 }
 
@@ -71,43 +67,40 @@ header h1 span {
 
 header img { display: none; }
 
-nav { 
+.nav-menu { 
     display: flex; 
     align-items: center; 
     gap: 4px; 
     position: fixed;
     top: 0;
     right: -100%; 
-    width: 80%; /* Ou 70% como você preferir */
+    width: 80%;
     height: 100vh;
     background: var(--card);
     z-index: 999;
-    
-    /* ADICIONE ESTAS DUAS LINHAS: */
     visibility: hidden; 
-    pointer-events: none; /* Impede cliques acidentais no menu invisível */
-    
+    pointer-events: none;
     transition: all var(--transition);
 }
- nav.active {
+
+nav.active {
     right: 0;
     visibility: visible;
     pointer-events: auto;
 }
+
 nav a {
     font-size: 14px;
-    font-weight:bolder;
+    font-weight: bolder;
     color: var(--muted);
-     padding: 7px 16px;
-    /* border-radius: 99px; */
+    padding: 7px 16px;
     margin-left: 0;
-    /* transition: color var(--transition), background var(--transition); */
     text-decoration: none;
 }
 
 nav a:hover { 
-color: var(--cyan); 
-text-decoration: underline;
+    color: var(--cyan); 
+    text-decoration: underline;
 }
 
 .compre {
@@ -145,7 +138,6 @@ text-decoration: underline;
     border-radius: 0;
 }
 
-/* Overlay gradients on top of carousel bg */
 .banner::before {
     content: '';
     position: absolute;
@@ -309,7 +301,6 @@ text-decoration: underline;
     background: var(--bg2);
     position: relative;
     overflow: hidden;
-    
     box-shadow: none;
 }
 
@@ -337,14 +328,13 @@ text-decoration: underline;
     line-height: 1.2;
     font-size: 2.5em;
     margin-bottom: 20px;
-    
 }
 
 .banner-text-content p {
     font-size: 1.05rem;
     color: var(--muted);
     line-height: 1.8;
-    margin: auto;
+    margin-bottom: 32px;
     max-width: 480px;
 }
 
@@ -615,25 +605,11 @@ text-decoration: underline;
 
 /* ==================== CURSOS ==================== */
 .cursos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     padding: 96px 64px;
     background: var(--bg);
-}
-.cursos>h1 {
-    width: 100%;
-    font-family: var(--font-head);
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 56px;
-    color: var(--white);
-    font-size: clamp(2rem, 4vw, 3rem);
-}
-.cursos>h1>span{
-    color: var(--cyan);
-    text-shadow: 0 0 30px var(--cyan-glow);
 }
 
 .cursos .curso {
@@ -647,7 +623,6 @@ text-decoration: underline;
     transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
     color: inherit;
     box-shadow: none;
-    width: 500px;
 }
 
 .cursos .curso:hover {
@@ -667,7 +642,6 @@ text-decoration: underline;
 
 .curso:hover img { transform: scale(1.06); }
 
-/* Inner padding wrapper for curso content */
 .curso-body {
     padding: 24px;
     flex: 1;
@@ -775,15 +749,16 @@ text-decoration: underline;
     margin: 0;
     display: flex;
     flex-direction: column;
-
     transition: border-color var(--transition), box-shadow var(--transition);
 }
+
 .falas-depoimento {
     margin-top: -10px;
     margin-bottom: -30px;
     font-size: 3em;
     color: #00c6ff;
 }
+
 .depoimento:hover {
     border-color: rgba(0,198,255,0.2);
     box-shadow: 0 8px 30px rgba(0,0,0,0.3);
@@ -868,19 +843,15 @@ text-decoration: underline;
     padding: 48px 40px;
     text-align: center;
     box-shadow: 0 0 50px rgba(0,198,255,0.07), 0 20px 50px rgba(0,0,0,0.4);
-    box-shadow: var(--transition);
     flex: unset;
     min-width: unset;
     max-width: none;
-    
 }
 
 @keyframes cardPulse {
     0%,100% { box-shadow: 0 0 40px rgba(0,198,255,0.07), 0 20px 50px rgba(0,0,0,0.4); }
     50%      { box-shadow: 0 0 70px rgba(0,198,255,0.15), 0 20px 50px rgba(0,0,0,0.4); }
 }
-
-
 
 .card-compra h2 {
     font-family: var(--font-head);
@@ -951,10 +922,11 @@ text-decoration: underline;
     cursor: pointer;
     letter-spacing: 0.05em;
     text-decoration: none;
-    transition:0.3s;
+    transition: 0.3s;
 }
+
 .botao-comprar:hover {
-    background-color:white;
+    background-color: white;
     color: #0099cc;
     box-shadow: 0 0 40px var(--cyan-glow);
 }
@@ -985,11 +957,9 @@ footer p {
     line-height: 1.7;
 }
 
-/* ==================== RESPONSIVIDADE ==================== */
-
 /* ==================== HAMBURGUER UI ==================== */
 .hamburger {
-    display: none; /* Escondido no desktop */
+    display: none;
     cursor: pointer;
     flex-direction: column;
     gap: 5px;
@@ -1007,7 +977,6 @@ footer p {
     box-shadow: 0 0 10px var(--cyan-glow);
 }
 
-/* Animação para o X */
 .hamburger.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -1018,7 +987,6 @@ footer p {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Overlay para escurecer o fundo */
 .overlay {
     position: fixed;
     top: 0; left: 0;
@@ -1036,7 +1004,6 @@ footer p {
     opacity: 1;
 }
 
-/* ==================== RESPONSIVIDADE (MOBILE) ==================== */
 /* ==================== RESPONSIVIDADE TOTAL ==================== */
 
 /* Ajustes Gerais para Telas Grandes (Desktops) */
@@ -1059,13 +1026,9 @@ footer p {
     .banner-with-cards, 
     .infeep-container, 
     .container-oferta-final {
-        grid-template-columns: 1fr; /* Empilha as colunas */
+        grid-template-columns: 1fr;
         text-align: center;
     }
-    .depoimentos-grid {
-    display: flex;
-    flex-direction: column;
-}
 
     .banner-text-content, 
     .texto-marketing {
@@ -1081,45 +1044,44 @@ footer p {
 
     .cursos, 
     .depoimentos-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .infeep-image {
-        order: -1; /* Imagem aparece antes do texto no mobile */
+        order: -1;
     }
 }
 
 /* Celulares (Mobile) */
 @media (max-width: 768px) {
-    /* Header & Nav */
     .hamburger {
         display: flex;
     }
 
-    nav {
+    /* Mapeando o seletor nav e a classe nav-menu para garantir compatibilidade */
+    nav, .nav-menu {
         position: fixed;
         top: 0;
-        right: -110%; /* Aumentamos para garantir que suma mesmo */
+        right: -110%;
         width: 80%;
         height: 100vh;
-        
-        /* A MÁGICA ESTÁ AQUI: */
-        display: none; /* Ele deixa de existir para o layout quando fechado */
-        
+        display: none;
         transition: right var(--transition);
         z-index: 999;
     }
-    nav a , .compre{
+
+    nav a, .nav-menu a, .compre {
         font-size: 17px;
     }
-    /* Quando abrir, ele passa a existir e desliza */
-    nav.active {
-        display: flex; /* Volta a existir */
+
+    nav.active, .nav-menu.active {
+        display: flex;
         flex-direction: column;
         justify-content: center;
         right: 0;
+        visibility: visible;
+        pointer-events: auto;
     }
-}
 
     .compre {
         margin-left: 0;
@@ -1128,7 +1090,12 @@ footer p {
         text-align: center;
     }
 
-    /* Ajustes de Seções */
+    /* Forçando os grids ficarem em uma coluna simples e fluida */
+    .cursos, 
+    .depoimentos-grid {
+        grid-template-columns: 1fr;
+    }
+
     .banner-with-cards, 
     .infeep-experience, 
     .sobre, 
@@ -1142,15 +1109,11 @@ footer p {
         font-size: 2.5rem;
     }
 
-    /* Forçar 1 coluna em tudo */
-    
-
     .sobre-inner {
         padding-left: 15px;
         margin-left: 5px;
     }
 
-    /* Ajuste de Preço */
     .preco {
         font-size: 3.5rem;
     }
@@ -1159,20 +1122,14 @@ footer p {
         padding: 30px 20px;
     }
 
-    /* Reset de margens negativas ou fixas que você tinha */
     .cards-wrapper {
         margin-left: 0 !important; 
         max-width: 100%;
     }
-
+}
 
 /* Telas muito pequenas (iPhone SE, etc) */
 @media (max-width: 480px) {
-    .cursos, 
-    .depoimentos-grid {
-        display: flex;
-        flex-direction: column;
-    }
     header h1 {
         font-size: 18px;
     }
@@ -1189,5 +1146,3 @@ footer p {
         font-size: 1rem;
     }
 }
-
-   
