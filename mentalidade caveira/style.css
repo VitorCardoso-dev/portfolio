@@ -46,13 +46,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 50px 5%;
-    background: linear-gradient(rgba(5, 5, 5, 0.85), rgba(11, 11, 11, 0.6)), url('imagens/exercito-fundo.jpg');
+    padding: 50px;
+    background: linear-gradient(rgb(5 5 5 / 43%), rgb(11 11 11 / 0%)), url(imagens/exercito-fundo.jpg);
     background-size: cover;
     background-position: center;
     color: #ffffff;
-    min-height: 600px;
-    position: relative; 
+    position: relative;
 }
 
 .titulo {
@@ -77,8 +76,11 @@ header {
 }
 
 .titulo p {
-    font-size: 1.5em;
-    width: 50vw;
+    font-size: 1.2em;
+    background: #03030342;
+    padding: 10px;
+    border-radius: 10px;
+    /* width: 60vw; */
     opacity: 0.9;
     text-align: justify;
     color: #D9D9D9;
@@ -166,7 +168,6 @@ main {
 }
 
 .card-funcao {
-    background-color: #111111;
     padding: 40px 25px;
     border-radius: 4px;
     width: 320px;
@@ -285,7 +286,7 @@ main {
     justify-content: center;
     align-items: center;
     padding: 100px 5%;
-    background: linear-gradient(rgba(5, 5, 5, 0.85), rgba(11, 11, 11, 0.85)), url('imagens/soldado.png');
+    background: linear-gradient(rgb(5 5 5 / 43%), rgb(11 11 11 / 0%)), url('imagens/soldado.png');
     background-size: cover;
     background-position: right center; 
     color: #ffffff;
@@ -578,9 +579,8 @@ footer {
         margin-right: auto;
     }
     .titulo p {
-        text-align: center;
-        font-size: 15px;
-        width: 100%;
+        text-align: center; 
+        font-size: 1.1rem;
         margin: 0 auto;     
     }
     .titulo span { text-align: center; margin-top: 15px; }
@@ -642,11 +642,6 @@ footer {
     .sobre h1 { font-size: 35px; text-align: center; }
     .sobre h1::after { left: 50%; transform: translateX(-50%); }
     .sobre p { text-align: center; }
-    .beneficios {
-    background: linear-gradient(rgba(5, 5, 5, 0.85), rgba(11, 11, 11, 0.85)), url(imagens/soldado-mobile.png);
-    background-size: cover;
-    background-position: center;
-}
     .beneficios-header h1 { font-size: 35px; }
     .beneficios-grid { flex-direction: column; align-items: center; }
     .beneficios-item { width: 100%; min-width: 100%; }
@@ -685,6 +680,7 @@ footer {
 /* Layout Principal */
 .main-container {
     padding-top:10px;
+    width: 80vw;
     margin: 40px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1198,20 +1194,6 @@ footer {
 .item-aula .info-aula p { font-size: 0.95rem; font-weight: bold; color: #ffffff; }
 .item-aula .info-aula span { font-size: 0.8rem; color: #8A8A8A; }
 
-@media (max-width:768px){
-    .plataforma-grid { 
-    flex-direction: column; 
-}
-    .sidebar-aulas {
-    width:90vw;
-}
-    .aba-btn{
-        padding: 10px;
-    }
-    .modulos-abas{
-        padding: 15px;
-    }
-}
 
 /* ==========================================
    PÁGINA EXCLUSIVA: CENTRAL DE TREINO
@@ -1412,7 +1394,7 @@ body.page-rotina header p { font-size: 1.1rem; color: var(--text-muted); margin-
     padding-bottom: 15px;
     color: var(--dark-pure);
 }
-.secao-didatica > p { font-size: 1.1rem; color: var(--dark-gray); max-width: 800px; margin-bottom: 30px; }
+.secao-didatica > p { font-size: 1.1rem; color: var(--dark-gray);  margin-bottom: 30px; }
 
 .jornada-fluxo { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
 .passo-card {

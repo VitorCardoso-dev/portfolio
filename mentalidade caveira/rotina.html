@@ -67,9 +67,31 @@
                 </p>
 
                 <div class="form-group">
-                    <label for="novo-habito-nome">Nome do Hábito</label>
-                    <input type="text" id="novo-habito-nome" placeholder="Ex: Praticar Teclado, Visitar meus avós">
-                </div>
+                <label for="novo-habito-nome">Nome da Tarefa</label>
+                <input type="text" id="novo-habito-nome" list="tarefas-sugeridas" placeholder="Escolha ou digite uma tarefa...">
+                
+                <datalist id="tarefas-sugeridas">
+                    <option value="Arrumar a cama">
+                    <option value="Lavar a louça">
+                    <option value="Colocar a roupa para lavar">
+                    <option value="Limpar o quarto">
+                    
+                    <option value="Checar e-mails">
+                    <option value="Estudar para a prova">
+                    <option value="Revisar anotações">
+                    <option value="Organizar agenda do dia">
+                    
+                    <option value="Beber 2L de água">
+                    <option value="Tomar remédio / vitaminas">
+                    <option value="Fazer alongamento">
+                    <option value="Meditar por 10 minutos">
+                    
+                    <option value="Pagar contas / boletos">
+                    <option value="Fazer compras no mercado">
+                    <option value="Passear com o pet">
+                    <option value="Preparar o almoço/jantar">
+                </datalist>
+            </div>
 
                 <div class="form-group">
                     <label for="novo-habito-desc">Diretriz da Atividade</label>
