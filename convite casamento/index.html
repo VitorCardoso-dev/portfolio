@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Convite Casamento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+  
+  <noscript>
+    <style>
+      .fade-in, .fade-left, .fade-right, .timeline-content, .timeline-img {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
+  </noscript>
+</head>
+<body>
+
+<header id="navbar">
+  <a href="#home" class="nav-logo">Nomenoiva & Nomenoivo</a>
+  <ul class="nav-links">
+    <li><a href="#home">Início</a></li>
+    <li><a href="#evento">O Evento</a></li>
+    <li><a href="#historia">Nossa História</a></li>
+    <li><a href="#rsvp">Confirmar Presença</a></li>
+  </ul>
+  <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home"    onclick="closeMenu()">Início</a>
+    <a href="#evento"  onclick="closeMenu()">O Evento</a>
+    <a href="#historia" onclick="closeMenu()">Nossa História</a>
+    <a href="#rsvp"    onclick="closeMenu()">Confirmar Presença</a>
+  </div>
+</header>
+
+<section id="home">
+  <div class="hero-bg">
+    <img src="foto-exemplo-hero.png"
+         alt="Casal caminhando ao pôr do sol"/>
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Celebração de Amor</p>
+    <h1 class="hero-names">Nomenoiva<span class="amp">&</span>Nomenoivo</h1>
+    <div class="hero-countdown">
+      <div class="hero-line"></div>
+      <p class="hero-countdown-text" id="countdownText">...</p>
+
+    </div>
+    <p class="hero-date">14 de Março de 2026 · Fortaleza-CE</p>
+  </div>
+
+ 
+</section>
+
+<section id="evento">
+  <div class="ghost-rule"></div>
+  <div class="container">
+    <div class="evento-grid">
+
+      <div class="fade-left">
+        <div class="venue-img-wrap">
+          <img src="https://media.base44.com/images/public/6a33f65e40f84a8620abb810/6adcc6715_generated_1a2c39eb.png"
+               alt="Local da cerimônia"/>
+          <div class="venue-overlay"></div>
+
+          <div class="map-btn">
+            <div class="map-btn-title">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+              </svg>
+              Como Chegar (passe o mouse)
+            </div>
+            <div class="map-links">
+              <a href="#"
+                 target="_blank" class="map-link dark">Google Maps</a>
+              <a href="#"
+                 target="_blank" class="map-link light">Waze</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-right">
+        <p class="label-small">Detalhes</p>
+        <h2 class="heading-display" style="font-size:clamp(2.5rem,5vw,4rem);margin:1rem 0 3rem">O Evento</h2>
+
+        <div class="evento-detail">
+          <div class="detail-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+            </svg>
+          </div>
+          <div>
+            <p class="detail-label">Data</p>
+            <p class="detail-value">14 de Março de 2026</p>
+            <p class="detail-sub">Sábado</p>
+          </div>
+        </div>
+
+        <div class="evento-detail">
+          <div class="detail-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <div>
+            <p class="detail-label">Horário</p>
+            <p class="detail-value">16h00</p>
+            <p class="detail-sub">Cerimônia e Recepção</p>
+          </div>
+        </div>
+
+        <div class="evento-detail">
+          <div class="detail-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div>
+            <p class="detail-label">Local</p>
+            <p class="detail-value">Villa Bisutti</p>
+            <p class="detail-sub">Fortaleza, CE</p>
+          </div>
+        </div>
+
+        <div class="dress-code-box">
+          <div class="dress-code-head">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z"/>
+            </svg>
+            <span>Dress Code</span>
+          </div>
+          <p class="dress-code-value">Traje Esporte Fino</p>
+          <p class="dress-code-sub">Tons claros e terrosos são bem-vindos.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="historia">
+  <div class="container">
+    <div class="timeline-header fade-in">
+      <p class="label-small">Capítulos</p>
+      <h2 class="heading-display" style="font-size:clamp(2.5rem,5vw,4rem);margin-top:1rem">Nossa História</h2>
+    </div>
+
+    <div class="timeline-wrap" id="timelineWrap">
+      <div class="timeline-line">
+        <div class="timeline-line-bg"></div>
+        <div class="timeline-line-fill" id="timelineFill"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <p class="timeline-year">2019</p>
+          <h3 class="timeline-title">O Primeiro Olhar</h3>
+          <p class="timeline-desc">Nos conhecemos em uma tarde de outono, num café escondido na Vila Madalena. Um sorriso tímido que mudou tudo.</p>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-img">
+          <img src="https://media.base44.com/images/public/6a33f65e40f84a8620abb810/0c4897dd3_generated_e892c28d.png"
+               alt="O primeiro olhar" style="aspect-ratio:1/1"/>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content right">
+          <p class="timeline-year">2020</p>
+          <h3 class="timeline-title">Inseparáveis</h3>
+          <p class="timeline-desc">Entre conversas que varavam a madrugada e viagens improvisadas, descobrimos que o nosso lugar preferido era sempre ao lado um do outro.</p>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-img">
+          <img src="https://media.base44.com/images/public/6a33f65e40f84a8620abb810/1838fa156_generated_5e63f578.png"
+               alt="Inseparáveis" style="aspect-ratio:4/5"/>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <p class="timeline-year">2024</p>
+          <h3 class="timeline-title">O Pedido</h3>
+          <p class="timeline-desc">Num jardim banhado pela luz dourada do fim de tarde, entre flores e lágrimas de felicidade, ela disse sim.</p>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-img">
+          <img src="https://media.base44.com/images/public/6a33f65e40f84a8620abb810/26be69cad_generated_51442a31.png"
+               alt="O pedido" style="aspect-ratio:4/5"/>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="container">
+    <div class="gallery-header fade-in">
+      <p class="label-small">Galeria</p>
+      <h2 class="heading-display" style="font-size:clamp(2.5rem,5vw,4rem);margin-top:1rem">Nossos Momentos</h2>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item g1">
+        <img src="https://media.base44.com/images/public/6a33f65e40f84a8620abb810/1838fa156_generated_5e63f578.png" alt="Foto 1"/>
+      </div>
+      <div class="gallery-item g2">
+        <img src="https://media.base44.com/images/public/6a33f65e40f84a8620abb810/0c4897dd3_generated_e892c28d.png" alt="Foto 2"/>
+      </div>
+      <div class="gallery-item g3">
+        <img src="https://media.base44.com/images/public/6a33f65e40f84a8620abb810/03a7ed928_generated_ba444b18.png" alt="Foto 3"/>
+      </div>
+      <div class="gallery-item g4">
+        <img src="https://media.base44.com/images/public/6a33f65e40f84a8620abb810/26be69cad_generated_51442a31.png" alt="Foto 4"/>
+      </div>
+      <div class="gallery-item g5">
+        <img src="https://media.base44.com/images/public/6a33f65e40f84a8620abb810/6adcc6715_generated_1a2c39eb.png" alt="Foto 5"/>
+      </div>
+    </div>
+
+    <div class="hashtag-wrap fade-in">
+      <p class="hashtag-label">Compartilhe seus momentos conosco</p>
+      <p class="hashtag-tag">#CasamentoAlineEGleison</p>
+    </div>
+  </div>
+</section>
+
+<section id="rsvp">
+  <div class="ghost-rule"></div>
+  <div class="rsvp-inner">
+
+    <div class="rsvp-header fade-in">
+      <p class="label-small">Confirme sua presença</p>
+      <h2 class="heading-display" style="font-size:clamp(3rem,6vw,4.5rem);margin-top:1rem">RSVP</h2>
+    </div>
+
+    <div class="rsvp-progress">
+      <div class="rsvp-bar active" id="bar0"></div>
+      <div class="rsvp-bar"        id="bar1"></div>
+      <div class="rsvp-bar"        id="bar2"></div>
+    </div>
+
+    <div class="rsvp-step active" id="step0">
+      <p class="rsvp-question">Quem estamos recebendo?</p>
+      <div class="underline-field">
+        <label for="fullName">Nome Completo</label>
+        <input type="text" id="fullName" placeholder="Seu nome completo"/>
+      </div>
+      <p class="options-label">Quem convidou</p>
+      <div class="options-grid">
+        <button class="option-btn" onclick="selectOption(this,'invitedBy')">Noivo</button>
+        <button class="option-btn" onclick="selectOption(this,'invitedBy')">Noiva</button>
+        <button class="option-btn" onclick="selectOption(this,'invitedBy')">Família do Noivo</button>
+        <button class="option-btn" onclick="selectOption(this,'invitedBy')">Família da Noiva</button>
+      </div>
+    </div>
+
+    <div class="rsvp-step" id="step1">
+      <p class="rsvp-question">Poderemos contar com sua presença?</p>
+      <button class="presence-btn" onclick="selectPresence(this, true)">
+        <span class="emoji">🥂</span>
+        <span>Sim, com certeza!</span>
+        <svg class="presence-check" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+      </button>
+      <button class="presence-btn" onclick="selectPresence(this, false)">
+        <span class="emoji">💌</span>
+        <span>Infelizmente não poderei ir</span>
+        <svg class="presence-check" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="rsvp-step" id="step2">
+      <p class="rsvp-question" id="step2Question">Conte-nos mais</p>
+
+      <div id="guestSection" style="display:none">
+        <p class="options-label">Acompanhantes</p>
+        <div class="guest-count" id="guestCount">
+          <button class="count-btn selected" onclick="selectCount(this,0)">0</button>
+          <button class="count-btn" onclick="selectCount(this,1)">1</button>
+          <button class="count-btn" onclick="selectCount(this,2)">2</button>
+          <button class="count-btn" onclick="selectCount(this,3)">3</button>
+          <button class="count-btn" onclick="selectCount(this,4)">4</button>
+        </div>
+        <div class="underline-field" id="guestNamesField" style="display:none;margin-bottom:1.5rem">
+          <label for="guestNames">Nomes dos acompanhantes</label>
+          <input type="text" id="guestNames" placeholder="Separe os nomes por vírgula"/>
+        </div>
+      </div>
+
+      <div class="underline-field">
+        <label for="message">Mensagem aos noivos <span style="color:rgba(26,26,26,0.3)">(opcional)</span></label>
+        <textarea id="message" rows="4" placeholder="Escreva algo especial..."></textarea>
+      </div>
+    </div>
+
+    <div class="rsvp-success" id="rsvpSuccess">
+      <span class="success-heart">💗</span>
+      <h2 class="success-title" id="successTitle">Presença Confirmada!</h2>
+      <p class="success-text" id="successText">Mal podemos esperar para celebrar com você. Será um dia inesquecível.</p>
+      <div class="success-rule"></div>
+      <p class="success-names" id="successNames">Nomenoiva & Nomenoivo</p>
+    </div>
+
+    <div class="rsvp-nav" id="rsvpNav">
+      <button class="btn-back" id="btnBack" onclick="prevStep()" style="visibility:hidden">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M19 12H5M12 5l-7 7 7 7"/>
+        </svg>
+        Voltar
+      </button>
+      <button class="btn-next" id="btnNext" onclick="nextStep()">
+        Continuar
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+      <button class="btn-submit" id="btnSubmit" onclick="submitRSVP()" style="display:none">
+        Confirmar
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-rule"></div>
+  <p class="footer-names">Nomenoiva & Nomenoivo</p>
+  <p class="footer-date">14 de Março de 2026</p>
+  <p class="footer-credit">Feito com Amor e Carinho ♡</p>
+
+</footer>
+
+<a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20casamento."
+   target="_blank" class="whatsapp-btn" aria-label="WhatsApp">
+  <svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
